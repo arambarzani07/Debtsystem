@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Primary Meta Tags -->
+    <title>سیستەمی بەڕێوەبردنی قەرز | Debt System Manager</title>
+    <meta name="title" content="سیستەمی بەڕێوەبردنی قەرز | Debt System Manager" />
+    <meta name="description" content="سیستەمێکی پێشکەوتوو بۆ بەڕێوەبردنی قەرز و قەرزدار. ئەپلیکەیشنێکی زیرەک بۆ خاوەن کار و فرۆشگاکان." />
+    <meta name="keywords" content="قەرز, بەڕێوەبردنی قەرز, debt management, کوردستان, فرۆشگا, قەرزدار" />
+    <meta name="author" content="Debt System Manager" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Kurdish" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.debtsystemmanager.com/" />
+    <meta property="og:title" content="سیستەمی بەڕێوەبردنی قەرز | Debt System Manager" />
+    <meta property="og:description" content="سیستەمێکی پێشکەوتوو بۆ بەڕێوەبردنی قەرز و قەرزدار. ئەپلیکەیشنێکی زیرەک بۆ خاوەن کار و فرۆشگاکان." />
+    <meta property="og:image" content="https://www.debtsystemmanager.com/og-image.png" />
+    <meta property="og:locale" content="ku_IQ" />
+    <meta property="og:site_name" content="Debt System Manager" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.debtsystemmanager.com/" />
+    <meta property="twitter:title" content="سیستەمی بەڕێوەبردنی قەرز | Debt System Manager" />
+    <meta property="twitter:description" content="سیستەمێکی پێشکەوتوو بۆ بەڕێوەبردنی قەرز و قەرزدار. ئەپلیکەیشنێکی زیرەک بۆ خاوەن کار و فرۆشگاکان." />
+    <meta property="twitter:image" content="https://www.debtsystemmanager.com/og-image.png" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2563EB" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Debt Manager" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Debt System Manager" />
+    <meta name="msapplication-TileColor" content="#2563EB" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.debtsystemmanager.com/" />
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://www.debtsystemmanager.com" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "سیستەمی بەڕێوەبردنی قەرز",
+      "alternateName": "Debt System Manager",
+      "description": "سیستەمێکی پێشکەوتوو بۆ بەڕێوەبردنی قەرز و قەرزدار",
+      "url": "https://www.debtsystemmanager.com",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      }
+    }
+    </script>
+    
+    <style>
+      html, body, #root {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #f8fafc;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Loading Screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+      
+      .loading-logo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 24px;
+        animation: pulse 1.5s infinite;
+      }
+      
+      .loading-text {
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+      
+      .loading-subtext {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        text-align: center;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top-color: white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-top: 24px;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+      
+      /* Hide loading screen when app loads */
+      .loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      /* Disable text selection on mobile */
+      @media (max-width: 768px) {
+        body {
+          -webkit-user-select: none;
+          user-select: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <svg class="loading-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="white" stroke-width="2" fill="none"/>
+        <path d="M35 50C35 41.716 41.716 35 50 35C58.284 35 65 41.716 65 50" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        <path d="M50 35V25M50 75V65" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="8" fill="white"/>
+        <text x="50" y="90" text-anchor="middle" fill="white" font-size="10" font-weight="bold">$</text>
+      </svg>
+      <div class="loading-text">سیستەمی بەڕێوەبردنی قەرز</div>
+      <div class="loading-subtext">Debt System Manager</div>
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- App Root -->
+    <div id="root"></div>
+    
+    <script>
+      // Hide loading screen when app is ready
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.classList.add('hidden');
+            setTimeout(function() {
+              loadingScreen.remove();
+            }, 300);
+          }
+        }, 500);
+      });
+      
+      // Register Service Worker for PWA
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('ServiceWorker registration successful');
+          }).catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+    
+    <!-- Noscript fallback -->
+    <noscript>
+      <div style="padding: 40px; text-align: center; font-family: sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>تکایە JavaScript چالاک بکە بۆ بەکارهێنانی ئەم سیستەمە.</p>
+        <p>Please enable JavaScript to use this application.</p>
+      </div>
+    </noscript>
+  </body>
+</html>

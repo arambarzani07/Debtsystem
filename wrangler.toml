@@ -1,0 +1,14 @@
+# Cloudflare Pages Configuration for www.debtsystemmanager.com
+name = "debt-system-manager"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm install --legacy-peer-deps && npx expo export -p web"
+output_dir = "dist"
+
+[env.production]
+name = "debt-system-manager"
+
+[[routes]]
+pattern = "/*"
+zone_name = "debtsystemmanager.com"
