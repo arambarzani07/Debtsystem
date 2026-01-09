@@ -131,8 +131,7 @@ export default function HomeScreen() {
   const isAuthenticated = auth?.isAuthenticated ?? false;
   const logout = auth?.logout;
   const getCurrentMarket = auth?.getCurrentMarket;
-  const authLoading = auth?.isLoading ?? true;
-
+  const authLoading = auth?.isLoading === true;
   const debtors = useMemo(() => debt?.debtors ?? [], [debt?.debtors]);
   const isLoading = debt?.isLoading ?? false;
   const refresh = debt?.refresh;
