@@ -1,15 +1,1 @@
-# Netlify/Vercel SPA Redirects
-# Handle client-side routing for Single Page Application
-
-# API routes - proxy to backend
-/api/*  /api/:splat  200
-
-# Handle all other routes as SPA
 /*    /index.html   200
-
-# Redirect non-www to www
-https://debtsystemmanager.com/*  https://www.debtsystemmanager.com/:splat  301
-http://debtsystemmanager.com/*  https://www.debtsystemmanager.com/:splat  301
-
-# Force HTTPS
-http://www.debtsystemmanager.com/*  https://www.debtsystemmanager.com/:splat  301
