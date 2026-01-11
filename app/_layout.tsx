@@ -82,10 +82,14 @@ function RootStack() {
       <Stack.Screen name="hourly-backup-settings" options={{ title: "باکئەپ" }} />
 
       {/* ✅ Dynamic routes MUST use [param] */}
-      <<Stack.Screen name="invitation/[marketId]" options={{ headerShown: false }} />
-      <Stack.Screen
-  name="invitation/[marketId]/[debtorId]"
-  options={{ headerShown: false }}
+    {/* Dynamic routes */}
+     <Stack.Screen
+       name="invitation/[marketId]"
+       options={{ headerShown: false }}
+/>
+
+      <Stack.Screen name="invitation/[marketId]/[debtorId]"
+                    options={{ headerShown: false }}
 />
 
       {/* Not found */}
