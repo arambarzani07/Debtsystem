@@ -7,7 +7,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { trpc, trpcClient } from "@/lib/trpc";
 
 import ErrorBoundary from "@/components/ErrorBoundary";
-
 import { DebtContext } from "@/contexts/DebtContext";
 import { ThemeContext } from "@/contexts/ThemeContext";
 import { SecurityContext } from "@/contexts/SecurityContext";
@@ -83,11 +82,11 @@ function RootStack() {
       <Stack.Screen name="hourly-backup-settings" options={{ title: "باکئەپ" }} />
 
       {/* ✅ Dynamic routes MUST use [param] */}
-      <Stack.Screen name="invitation/[marketId]" options={{ headerShown: false }} />
+      <<Stack.Screen name="invitation/[marketId]" options={{ headerShown: false }} />
       <Stack.Screen
-        name="invitation/[marketId]/[debtorId]"
-        options={{ headerShown: false }}
-      />
+  name="invitation/[marketId]/[debtorId]"
+  options={{ headerShown: false }}
+/>
 
       {/* Not found */}
       <Stack.Screen name="+not-found" options={{ title: "نەدۆزرایەوە" }} />
