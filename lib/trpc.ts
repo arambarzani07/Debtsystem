@@ -7,37 +7,34 @@ import { Platform } from "react-native";
 export const trpc = createTRPCReact<AppRouter>();
 
 /**
- * ✅ Get backend base URL
- * Works for Web + Mobile
+ * Backend URL
+ * - Web: ❌ disable tRPC
+ * - Mobile: ✅ Rork backend
  */
-function getBaseUrl(): string {
-  // 🌐 WEB (Vercel / Netlify)
+function getBaseUrl(): string | null {
+  // 🌐 WEB
   if (Platform.OS === "web") {
-    return "https://www.debtsystemmanager.com/api";
+    return null;
   }
 
-  // 📱 MOBILE (Expo / Rork runtime)
+  // 📱 MOBILE (Rork)
   return "https://www.debtsystemmanager.com/api";
 }
 
-/**
- * ✅ tRPC Client (safe for Web + Mobile)
- */
+const baseUrl = getBaseUrl();
+
 export const trpcClient = trpc.createClient({
   transformer: superjson,
-  links: [
-    httpBatchLink({
-      url: `${getBaseUrl()}/trpc`,
-      fetch(url, options) {
-        return fetch(url, {
-          ...options,
-          credentials: "include",
-          headers: {
-            ...(options?.headers ?? {}),
-            "Content-Type": "application/json",
+  links: baseUrl
+    ? [
+        httpBatchLink({
+          url: `${baseUrl}/trpc`,
+          headers() {
+            return {
+              "Content-Type": "application/json",
+            };
           },
-        });
-      },
-    }),
-  ],
+        }),
+      ]
+    : [], // 👈 web = no tRPC calls
 });
