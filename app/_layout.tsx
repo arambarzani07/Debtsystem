@@ -3,6 +3,8 @@ import React, { PropsWithChildren, useMemo } from "react";
 import { Platform, StyleSheet, View } from "react-native";
 import { Stack } from "expo-router";
 
+import { useAppReadiness } from "@/lib/useAppReadiness";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { trpc, trpcClient } from "@/lib/trpc";
 
@@ -99,6 +101,8 @@ function RootStack() {
 }
 
 export default function RootLayout() {
+  useAppReadiness();
+
   const queryClient = useMemo(
     () =>
       new QueryClient({

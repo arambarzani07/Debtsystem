@@ -24,11 +24,11 @@ function getBaseUrl(): string | null {
 const baseUrl = getBaseUrl();
 
 export const trpcClient = trpc.createClient({
-  transformer: superjson,
   links: baseUrl
     ? [
         httpBatchLink({
           url: `${baseUrl}/trpc`,
+          transformer: superjson,
           headers() {
             return {
               "Content-Type": "application/json",
