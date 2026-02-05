@@ -179,9 +179,9 @@ export default function HomeScreen() {
     if (hasRedirected || authLoading) return;
     
     if (!isAuthenticated) {
-      console.log('Not authenticated, redirecting to login');
+      console.log('Not authenticated, redirecting to public landing');
       setHasRedirected(true);
-      router.replace('/login' as any);
+      router.replace('/public' as any);
       return;
     }
 
@@ -197,7 +197,7 @@ export default function HomeScreen() {
               onPress: async () => {
                 if (logout) await logout();
                 setHasRedirected(true);
-                router.replace('/login' as any);
+                router.replace('/public' as any);
               },
             },
           ]

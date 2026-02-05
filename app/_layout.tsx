@@ -33,7 +33,7 @@ function AppRootView({ children }: PropsWithChildren) {
   }
 
   // Native-only (lazy require to avoid web bundling issues)
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { GestureHandlerRootView } = require("react-native-gesture-handler");
   return <GestureHandlerRootView style={styles.container}>{children}</GestureHandlerRootView>;
 }
@@ -46,6 +46,7 @@ function RootStack() {
     <Stack screenOptions={{ headerBackTitle: "گەڕانەوە" }}>
       {/* Core */}
       <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="public" options={{ headerShown: false }} />
       <Stack.Screen name="home" options={{ headerShown: false }} />
       <Stack.Screen name="login" options={{ headerShown: false }} />
       <Stack.Screen name="market-request" options={{ headerShown: false }} />
